@@ -110,7 +110,7 @@ function HomePage() {
 
   const closePreview = () => setIsPreviewOpen(false);
 
-  if (!loggedInUser) {
+  if (loggedInUser === null) {
     return (
       <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex items-center justify-center p-6">
         <div className="max-w-md text-center">
