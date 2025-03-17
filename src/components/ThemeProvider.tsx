@@ -6,7 +6,7 @@ import { ThemeProvider } from "next-theme";
 function ThemeProviderComp({ children }: { children: ReactNode }) {
   return (
     <div>
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <ThemeProvider attribute="class" defaultTheme="system">
         {children}
       </ThemeProvider>
     </div>

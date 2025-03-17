@@ -27,3 +27,10 @@ export type codeObjectType = {
   createdAt: string;
   updatedAt: string;
 };
+
+// types/user.ts
+export interface User {
+  name: string;
+  email: string;
+  image?: string; // Optional property
+}

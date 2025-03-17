@@ -18,8 +18,8 @@ function AboutUsPage() {
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
           CodeCraft is a modern, secure, and intuitive chat application designed
-          to bring people closer. Whether you're collaborating with your team or
-          connecting with friends, CodeCraft makes communication seamless and
+          to bring people closer. Whether you are collaborating with your team
+          or connecting with friends, CodeCraft makes communication seamless and
           enjoyable.
         </p>
       </div>

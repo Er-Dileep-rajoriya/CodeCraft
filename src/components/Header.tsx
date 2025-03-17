@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Menu, X, Sun, Moon, User, LogOut } from "lucide-react";
+import { Menu, X, Sun, Moon, LogOut } from "lucide-react";
 import { signOut, useSession } from "next-auth/react";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoggedInUser } from "@/redux/userReducer";
@@ -103,11 +103,17 @@ function Navbar() {
                   >
                     <Avatar className="h-8 w-8 rounded-full">
                       <AvatarImage
-                        src={user?.image || loggedInUser?.image}
-                        alt={user?.name || loggedInUser?.name}
+                        src={
+                          user?.image ||
+                          loggedInUser?.image ||
+                          "/default-avatar.png"
+                        }
+                        alt={user?.name || loggedInUser?.name || "User"}
                       />
                       <AvatarFallback className="bg-white text-blue-600 font-semibold">
-                        {user?.name?.charAt(0) || loggedInUser?.name?.charAt(0)}
+                        {(user?.name || loggedInUser?.name || "U")
+                          .charAt(0)
+                          .toUpperCase()}
                       </AvatarFallback>
                     </Avatar>
                   </Button>

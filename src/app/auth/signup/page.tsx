@@ -1,12 +1,13 @@
 "use client";
 
 import React, { FormEvent, useEffect, useState } from "react";
-import { Eye, EyeOff, Router } from "lucide-react";
+import { Eye, EyeOff, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { SignUpUser } from "@/actions/user_auth";
 import { toast } from "sonner";
+import { FcGoogle } from "react-icons/fc";
 
 type userObject = {
   name: string;
@@ -20,7 +21,8 @@ function SignUpPage() {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
-  const { data: session, status } = useSession();
+  const { status } = useSession();
+  // const { data: session } = useSession();
   const [user, setUser] = useState<userObject>({
     name: "",
     email: "",
@@ -90,6 +92,7 @@ function SignUpPage() {
         setErrors({ ...errors, formError: response.message });
       }
     } catch (err) {
+      console.error(err);
       setErrors({
         ...errors,
         formError: "Something went wrong. Please try again.",
@@ -221,11 +224,12 @@ function SignUpPage() {
           variant="outline"
           className="w-full flex items-center justify-center space-x-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-600 text-gray-700 dark:text-white font-semibold py-2 rounded-lg"
         >
-          <img
+          <FcGoogle />
+          {/* <img
             src="https://www.svgrepo.com/show/355037/google.svg"
             alt="Google"
             className="h-5 w-5"
-          />
+          /> */}
           <span>Sign up with Google</span>
         </Button>
 
@@ -238,11 +242,12 @@ function SignUpPage() {
           variant="outline"
           className="w-full flex items-center justify-center space-x-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-600 text-gray-700 dark:text-white font-semibold py-2 rounded-lg mt-4"
         >
-          <img
+          <Github />
+          {/* <img
             src="https://www.svgrepo.com/show/512317/github-142.svg"
             alt="GitHub"
             className="h-5 w-5"
-          />
+          /> */}
           <span>Sign up with GitHub</span>
         </Button>
 

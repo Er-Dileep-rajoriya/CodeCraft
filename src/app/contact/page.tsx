@@ -14,8 +14,8 @@ function ContactUsPage() {
           Contact Us
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-          Have questions or need assistance? We're here to help! Reach out to us
-          via the form below or through our contact information.
+          Have questions or need assistance? We are here to help! Reach out to
+          us via the form below or through our contact information.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

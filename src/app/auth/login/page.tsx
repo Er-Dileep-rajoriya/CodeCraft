@@ -1,7 +1,7 @@
 "use client";
 
 import React, { FormEvent, useEffect, useState } from "react";
-import { Eye, EyeOff } from "lucide-react";
+import { Eye, EyeOff, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { getSession, signIn, useSession } from "next-auth/react";
@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { setLoggedInUser } from "@/redux/userReducer";
 import { toast } from "sonner";
+import { FcGoogle } from "react-icons/fc";
 
 type userObject = {
   email: string;
@@ -193,11 +194,12 @@ function LoginPage() {
           variant="outline"
           className="w-full flex items-center justify-center space-x-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-600 text-gray-700 dark:text-white font-semibold py-2 rounded-lg"
         >
-          <img
+          <FcGoogle />
+          {/* <Image
             src="https://www.svgrepo.com/show/355037/google.svg"
             alt="Google"
             className="h-5 w-5"
-          />
+          /> */}
           <span>Log in with Google</span>
         </Button>
 
@@ -210,17 +212,18 @@ function LoginPage() {
           variant="outline"
           className="w-full flex items-center justify-center space-x-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-600 text-gray-700 dark:text-white font-semibold py-2 rounded-lg mt-4"
         >
-          <img
+          <Github />
+          {/* <img
             src="https://www.svgrepo.com/show/512317/github-142.svg"
             alt="GitHub"
             className="h-5 w-5"
-          />
+          /> */}
           <span>Log in with GitHub</span>
         </Button>
 
         {/* Signup Link */}
         <p className="text-center text-gray-600 dark:text-gray-400 mt-6">
-          Don't have an account?{" "}
+          Do not have an account?{" "}
           <Link
             href="/auth/signup"
             className="text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"

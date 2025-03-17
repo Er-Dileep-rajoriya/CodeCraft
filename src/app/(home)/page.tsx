@@ -43,7 +43,7 @@ function HomePage() {
               return prev;
             }
           });
-        }, 10); // Typing speed (adjust as needed)
+        }, 10); // Typing speed
 
         return () => clearInterval(intervalId);
       }
@@ -70,6 +70,7 @@ function HomePage() {
 
     if (!prompt.trim()) {
       setError("Please enter a prompt.");
+      console.log(error);
       return;
     }
 
