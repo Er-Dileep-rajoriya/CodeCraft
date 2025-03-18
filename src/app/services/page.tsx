@@ -11,8 +11,12 @@ import {
   Shield,
   Users,
 } from "lucide-react";
+import {useSelector} from 'react-redux';
+import {RootState} from '../redux/store';
 
 function ServicesPage() {
+  const {loggedInUser} = useSelector((store : RootState) => store.userReducer);
+  
   const services = [
     {
       icon: (
@@ -86,7 +90,11 @@ function ServicesPage() {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-12">
+
+
+
+    {
+        loggedInUser !== null ? <div className="text-center mt-12">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
             Ready to Get Started?
           </h2>
@@ -98,7 +106,9 @@ function ServicesPage() {
               Sign Up Now
             </Button>
           </Link>
-        </div>
+        </div> : null
+      }
+        
       </div>
     </div>
   );
