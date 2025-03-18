@@ -130,7 +130,7 @@ function AboutUsPage() {
 
       {/* Call to Action */}
       {
-        loggedInUser !== null ? <div className="text-center">
+        loggedInUser == null ? <div className="text-center">
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
           Ready to Get Started?
         </h2>
