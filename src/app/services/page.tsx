@@ -12,7 +12,7 @@ import {
   Users,
 } from "lucide-react";
 import {useSelector} from 'react-redux';
-import {RootState} from '../redux/store';
+import {RootState} from '@/redux/store';
 
 function ServicesPage() {
   const {loggedInUser} = useSelector((store : RootState) => store.userReducer);
