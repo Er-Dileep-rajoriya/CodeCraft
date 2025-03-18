@@ -7,8 +7,12 @@ import Image from "next/image";
 import team_member_1 from "../../../public/team_member_1.avif";
 import team_member_2 from "../../../public/team_member_2.avif";
 import team_member_3 from "../../../public/team_member_3.avif";
+import {useSelector} from 'react-redux';
+import {RootState} from '../redux/userReducer';
 
 function AboutUsPage() {
+  const {loggedInUser} = useSelector((store : RootState) => store.userReducer);
+  
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex flex-col items-center justify-center p-4 pt-16">
       {/* Hero Section */}
@@ -125,7 +129,8 @@ function AboutUsPage() {
       </div>
 
       {/* Call to Action */}
-      <div className="text-center">
+      {
+        loggedInUser !== null ? <div className="text-center">
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
           Ready to Get Started?
         </h2>
@@ -137,7 +142,8 @@ function AboutUsPage() {
             Sign Up Now
           </Button>
         </Link>
-      </div>
+      </div> : null
+      }
     </div>
   );
 }
