@@ -94,7 +94,7 @@ function ServicesPage() {
 
 
     {
-        loggedInUser !== null ? <div className="text-center mt-12">
+        loggedInUser == null ? <div className="text-center mt-12">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
             Ready to Get Started?
           </h2>
