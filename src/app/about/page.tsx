@@ -8,7 +8,7 @@ import team_member_1 from "../../../public/team_member_1.avif";
 import team_member_2 from "../../../public/team_member_2.avif";
 import team_member_3 from "../../../public/team_member_3.avif";
 import {useSelector} from 'react-redux';
-import {RootState} from '../redux/store.ts';
+import {RootState} from '@/redux/store';
 
 function AboutUsPage() {
   const {loggedInUser} = useSelector((store : RootState) => store.userReducer);
